@@ -13,7 +13,7 @@ const path = require('path');
 const webpack = require('webpack');
 const configFactory = require('./base');
 
-const PACKAGE_FILENAME = process.env.HOT_FILENAME;
+const PACKAGE_FILENAME = process.env.HOT_FILENAME || 'handsontable';
 
 module.exports.create = function create(envArgs) {
   const configBase = configFactory.create(envArgs);

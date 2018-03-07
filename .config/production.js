@@ -13,7 +13,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 const configFactory = require('./development');
 
-const PACKAGE_FILENAME = process.env.HOT_FILENAME;
+const PACKAGE_FILENAME = process.env.HOT_FILENAME || "handsontable";
 
 module.exports.create = function create(envArgs) {
   const config = configFactory.create(envArgs);

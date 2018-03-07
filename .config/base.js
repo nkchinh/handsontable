@@ -5,6 +5,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const path = require('path');
 const fs = require('fs');
 const webpack = require('webpack');
+const emptyLoader = require('./loader/empty-loader');
 
 let licenseBody = fs.readFileSync(path.resolve(__dirname, '../LICENSE'), 'utf8');
 
@@ -13,6 +14,7 @@ licenseBody += '\nRelease date: ' + process.env.HOT_RELEASE_DATE + ' (built at '
 
 module.exports.create = function create(envArgs) {
   const config = {
+    entry: './src/index',
     devtool: false,
     output: {
       library: 'Handsontable',
